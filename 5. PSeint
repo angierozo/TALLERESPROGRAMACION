@@ -1,0 +1,33 @@
+Funcion resultado <- MCD(a,z)
+	Mientras z <> 0 Hacer
+		b = a MOD z
+		a = z
+		z = b
+	Fin Mientras
+	
+	resultado=a
+Fin Funcion
+
+Funcion resultado <- MCM (a,b)
+	resultado = (a*b)/MCD(a,b)
+Fin Funcion
+
+Algoritmo quintoPunto
+	Definir x, min Como Entero
+	Imprimir "Ingrese un numero"
+	Leer x
+	
+	min = x
+	
+	Imprimir "Ingrese otro numero"
+	Leer x
+	
+	Mientras x>0 Hacer
+		min = MCM (min,x)
+		Imprimir "Ingrese otro numero"
+		Leer x
+	Fin Mientras
+	
+	Imprimir "El mcm es ", min
+	
+FinAlgoritmo

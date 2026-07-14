@@ -1,0 +1,59 @@
+iniciar-programa
+
+define-nueva-instruccion gira-derecha como inicio
+	repetir 3 veces inicio
+    	gira-izquierda;
+    fin;
+fin;
+
+define-nueva-instruccion infinito como inicio
+	mientras frente-libre y derecha-bloqueada hacer inicio
+    	avanza;
+    fin;
+fin;
+
+define-nueva-instruccion infinito2 como inicio
+	mientras frente-libre hacer inicio
+    	avanza;
+    fin;
+fin;
+
+    inicia-ejecucion
+    
+    si frente-bloqueado o izquierda-bloqueada o derecha-bloqueada entonces inicio
+        si orientado-al-este o orientado-al-norte o orientado-al-sur o orientado-al-oeste entonces inicio
+    	gira-izquierda;
+        infinito2;
+        fin;
+        fin
+        sino inicio
+        	gira-izquierda;
+        	infinito2;
+        fin;
+
+	si frente-bloqueado entonces inicio
+    	gira-izquierda;
+    	infinito2;
+    fin;
+
+	si frente-bloqueado y izquierda-bloqueada entonces inicio
+    	gira-izquierda;
+        gira-izquierda;
+        infinito;
+    fin;
+    
+    mientras frente-bloqueado y derecha-bloqueada hacer inicio
+    	gira-izquierda;
+        infinito;
+    fin;
+    
+    infinito;
+    
+    si derecha-libre entonces inicio
+    	gira-derecha;
+    	avanza;
+    	apagate;
+    fin;
+   
+    termina-ejecucion
+finalizar-programa
